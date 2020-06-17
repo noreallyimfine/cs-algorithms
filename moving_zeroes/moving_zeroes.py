@@ -2,7 +2,7 @@
 Write a function that takes an array of integers and moves each non-zero integer to the left side of the array, then returns the altered array. The order of the non-zero integers does not matter in the mutated array.
 '''
 
-def move_zeroes(arr):
+def moving_zeroes(arr):
 
     # array may or may not have zeroes
     # final order doesnt matter
@@ -19,4 +19,4 @@ def move_zeroes(arr):
     return arr
 
 arr = [0, 3, 1, 0, -2]
-print(move_zeroes(arr))
+print(moving_zeroes(arr))
