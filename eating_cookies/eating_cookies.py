@@ -12,15 +12,18 @@ Thus, eating_cookies(3) should return an answer of 4.
 Can you implement a solution that runs fast enough to pass the large input test?
 '''
 
-def eating_cookies(n):
+def eating_cookies(n, cache=None):
 
     # Tribonnacci
-
-    if n == 0:
-        return 1
-    elif n == 1:
-        return 1
-    elif n == 2:
-        return 2
+    if not cache:
+        cache = {0:1, 1:1, 2:2}
+    
+    if n in cache:
+        return cache[n]
+    
     else:
-        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+        print(cache)
+        cache[n] = (eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache))
+        return cache[n]
+
+print(eating_cookies(6))
