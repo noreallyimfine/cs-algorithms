@@ -15,7 +15,10 @@ def product_of_all_other_numbers(arr):
         for j in range(len(arr)):
             # if indexers not equal, multcrement sum
             if j != i:
-                product *= arr[j]
+                if product == 0:
+                    product += arr[j]
+                else:
+                    product *= arr[j]
         # set val in new array
         products.append(product)
 
